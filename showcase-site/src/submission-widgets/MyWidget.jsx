@@ -1,27 +1,19 @@
 import React, { useState } from 'react';
+import './submission.css'
+import '@fontsource/space-grotesk';
 
 const MyWidget = () => {
-  const [text, setText] = useState('Hello, World!');
-
-  const changeText = () => setText('Text has been changed!');
-
+  const [count,setCount] = useState(0);
+  const name = "Nirav";
   return (
-    <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg">
-      <div className="text-center space-y-4">
-        <h2 className="text-xl font-bold text-gray-800">Empty Component</h2>
-
-        <div className="text-2xl font-bold text-blue-600">
-          {text}
-        </div>
-
-        <div className="flex justify-center">
-          <button
-            onClick={changeText}
-            className="p-2 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors"
-          >
-            Change Text
-          </button>
-        </div>
+    <div className='bg-yellow-100 p-10 rounded-lg m-2 border-5 border-slate-700 widget'>
+      <h1 className='text-stone-700'>Hello, {name}!</h1>
+      <p className='text-stone-700'>Welcome to React</p>
+      <p className='text-stone-700'>Count: {count}</p>
+      <div className='flex items-center justify-center m-5'>
+        <button className='text-white rounded w-6 h-6 bg-blue-900 flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black' onClick={() => setCount(count + 1)}>
+          +
+        </button>
       </div>
     </div>
   );
